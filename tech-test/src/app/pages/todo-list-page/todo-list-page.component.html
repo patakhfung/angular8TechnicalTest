@@ -1,0 +1,21 @@
+<div fxLayout="column" fxLayoutGap="40px">
+  <div>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxLayout="row">
+        <div class="mat-h1">Todo</div>
+        <button mat-icon-button color="primary" class="btn-add-task" (click)="onAddOrEditClicked()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Search" (keyup)="searchInput = $event.target.value">
+      </mat-form-field>
+    </div>
+
+    <app-todo-list [taskList]="taskList | activeTask | contentFilter: searchInput" [canEdit]="true" (dataChanged)="getTaskList()" (editClicked)="onAddOrEditClicked($event)"></app-todo-list>
+  </div>
+  <div>
+    <div class="mat-h1">Done</div>
+    <app-todo-list [taskList]="taskList | completedTask | contentFilter: searchInput" (dataChanged)="getTaskList()"></app-todo-list>
+  </div>
+</div>

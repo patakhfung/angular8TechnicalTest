@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{modalData.title}}</h1>
+<div mat-dialog-content>
+  <div [formGroup]="taskForm" fxLayout="column">
+    <mat-form-field>
+      <input matInput placeholder="Title" formControlName="label" id="label">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Description" formControlName="description" id="description">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Category" formControlName="category" id="category">
+    </mat-form-field>
+  </div>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="onSaveClick()" [disabled]="!taskForm.valid">Save</button>
+</mat-dialog-actions>

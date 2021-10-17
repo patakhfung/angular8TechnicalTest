@@ -1,0 +1,31 @@
+<div *ngFor="let task of taskList" >
+  <div fxLayout="column" fxLayoutGap="10px">
+    <mat-card>
+      <mat-card-content fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="space-between center" fxLayout.lt-sm="column">
+        <div fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="start center" fxLayoutGap.gt-xs="10px" fxLayout.lt-sm="column">
+          <div class="mat-body-2">{{task.label}}</div>
+          <div class="mat-body-1">{{task.description}}</div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end center">
+          <mat-chip-list *ngIf="task?.category">
+            <mat-chip color="primary" selected>{{task.category}}</mat-chip>
+          </mat-chip-list>
+          <div>
+            <button mat-icon-button (click)="onDeleteTask(task.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="canEdit" (click)="onEditTask(task)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="canEdit" (click)="onCompleteTask(task)">
+              <mat-icon>done</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="!canEdit" (click)="onRedoTask(task)">
+              <mat-icon>unarchive</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
