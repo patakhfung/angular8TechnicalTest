@@ -3,13 +3,13 @@ import {ITask} from '../../models/task';
 import {TaskService} from '../../services/task.service';
 
 @Component({
-  selector: 'app-todo-list',
+  selector: 'app-task-list',
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.scss']
 })
 export class TaskListComponent implements OnInit {
-  @Input() canEdit = false;
-  @Input() taskList: ITask[] = [];
+  @Input() public canEdit = false;
+  @Input() public taskList: ITask[] = [];
   @Output() dataChanged: EventEmitter<any> = new EventEmitter();
   @Output() editClicked: EventEmitter<any> = new EventEmitter();
 

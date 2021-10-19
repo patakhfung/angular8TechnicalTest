@@ -8,14 +8,14 @@
         </button>
       </div>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Search" (keyup)="searchInput = $event.target.value">
+        <input matInput placeholder="Search" (keyup)="searchInput = $event.target.value" id="input-filter">
       </mat-form-field>
     </div>
 
-    <app-todo-list [taskList]="taskList | activeTask | contentFilter: searchInput" [canEdit]="true" (dataChanged)="getTaskList()" (editClicked)="onAddOrEditClicked($event)"></app-todo-list>
+    <app-task-list [taskList]="tasks | activeTask | contentFilter: searchInput" [canEdit]="true"  (dataChanged)="getTaskList()" (editClicked)="onAddOrEditClicked($event)"></app-task-list>
   </div>
   <div>
     <div class="mat-h1">Done</div>
-    <app-todo-list [taskList]="taskList | completedTask | contentFilter: searchInput" (dataChanged)="getTaskList()"></app-todo-list>
+    <app-task-list [taskList]="tasks | completedTask | contentFilter: searchInput" (dataChanged)="getTaskList()"></app-task-list>
   </div>
 </div>

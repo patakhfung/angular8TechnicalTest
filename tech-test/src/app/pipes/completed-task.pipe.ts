@@ -7,7 +7,7 @@ import {ITask} from '../models/task';
 export class CompletedTaskPipe implements PipeTransform {
 
   transform(values: ITask[]): ITask[] {
-    return values.filter(value => value.done);
+    return Object.values(values).filter(value => value.done);
   }
 
 }

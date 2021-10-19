@@ -10,7 +10,7 @@ import {TaskEditModalComponent} from '../../components/task-edit-modal/task-edit
   styleUrls: ['./todo-list-page.component.scss']
 })
 export class TodoListPageComponent implements OnInit {
-  taskList: ITask[] = [];
+  tasks: ITask[] = [];
   searchInput: string;
 
   constructor(
@@ -24,7 +24,7 @@ export class TodoListPageComponent implements OnInit {
   }
 
   getTaskList() {
-    this.taskService.getTasks().subscribe(data => this.taskList = data);
+    this.taskService.getTasks().subscribe(data => this.tasks = data);
   }
 
   onAddOrEditClicked(task?: ITask) {

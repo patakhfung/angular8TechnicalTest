@@ -3,16 +3,37 @@
     {
       "id": 1,
       "label": "Kitchen Cleanup",
-      "description":  "Clean my dirty kitchen",
+      "description": "Clean my dirty kitchen",
       "category": "house",
       "done": false
     },
     {
       "id": 2,
       "label": "Taxes",
-      "description":  "Start doing my taxes and contact my accountant jhon for advice",
+      "description": "Start doing my taxes and contact my accountant jhon for advice",
       "category": "bureaucracy",
-      "done": "22-10-2019"
+      "done": false
+    },
+    {
+      "id": 3,
+      "label": "Groceries shopping",
+      "description": "Salad, Stake",
+      "category": "Groceries",
+      "done": "2021-10-18T21:41:00.376Z"
+    },
+    {
+      "id": 4,
+      "label": "Laundry",
+      "description": "",
+      "category": "house",
+      "done": false
+    },
+    {
+      "id": 5,
+      "label": "Order drinking water filter",
+      "description": "",
+      "category": "house",
+      "done": false
     }
   ]
 }

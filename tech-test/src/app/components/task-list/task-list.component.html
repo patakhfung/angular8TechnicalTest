@@ -11,16 +11,16 @@
             <mat-chip color="primary" selected>{{task.category}}</mat-chip>
           </mat-chip-list>
           <div>
-            <button mat-icon-button (click)="onDeleteTask(task.id)">
+            <button mat-icon-button (click)="onDeleteTask(task.id)" automation-id="btn-delete">
               <mat-icon>delete</mat-icon>
             </button>
-            <button mat-icon-button *ngIf="canEdit" (click)="onEditTask(task)">
+            <button mat-icon-button *ngIf="canEdit" (click)="onEditTask(task)" automation-id="btn-edit">
               <mat-icon>edit</mat-icon>
             </button>
-            <button mat-icon-button *ngIf="canEdit" (click)="onCompleteTask(task)">
+            <button mat-icon-button *ngIf="canEdit" (click)="onCompleteTask(task)" automation-id="btn-done">
               <mat-icon>done</mat-icon>
             </button>
-            <button mat-icon-button *ngIf="!canEdit" (click)="onRedoTask(task)">
+            <button mat-icon-button *ngIf="!canEdit" (click)="onRedoTask(task)" automation-id="btn-unarchive">
               <mat-icon>unarchive</mat-icon>
             </button>
           </div>
