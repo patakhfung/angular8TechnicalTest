@@ -1,5 +1,5 @@
-<div *ngFor="let task of taskList" >
-  <div fxLayout="column" fxLayoutGap="10px">
+<div fxLayout="column" fxLayoutGap="5px">
+  <div *ngFor="let task of taskList">
     <mat-card>
       <mat-card-content fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="space-between center" fxLayout.lt-sm="column">
         <div fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="start center" fxLayoutGap.gt-xs="10px" fxLayout.lt-sm="column">
@@ -29,3 +29,4 @@
     </mat-card>
   </div>
 </div>
+

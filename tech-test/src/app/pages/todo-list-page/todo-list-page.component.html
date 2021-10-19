@@ -1,21 +1,25 @@
-<div fxLayout="column" fxLayoutGap="40px">
-  <div>
-    <div fxLayout="row" fxLayoutAlign="space-between center">
-      <div fxLayout="row">
-        <div class="mat-h1">Todo</div>
-        <button mat-icon-button color="primary" class="btn-add-task" (click)="onAddOrEditClicked()">
-          <mat-icon>add</mat-icon>
-        </button>
+<div fxLayoutAlign="center">
+  <div fxFlex.lt-md="100%" fxFlex.gt-md="70%" fxFlex.gt-lg="60%">
+    <div fxLayout="column" fxLayoutGap="40px">
+      <div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div fxLayout="row">
+            <div class="mat-h1">Todo</div>
+            <button mat-icon-button color="primary" class="btn-add-task" (click)="onAddOrEditClicked()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Search" (keyup)="searchInput = $event.target.value" id="input-filter">
+          </mat-form-field>
+        </div>
+        <app-task-list [taskList]="tasks | activeTask | contentFilter: searchInput" [canEdit]="true"  (dataChanged)="getTaskList()" (editClicked)="onAddOrEditClicked($event)"></app-task-list>
       </div>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Search" (keyup)="searchInput = $event.target.value" id="input-filter">
-      </mat-form-field>
+      <div>
+        <div class="mat-h1">Done</div>
+        <app-task-list [taskList]="tasks | completedTask | contentFilter: searchInput" (dataChanged)="getTaskList()"></app-task-list>
+      </div>
     </div>
-
-    <app-task-list [taskList]="tasks | activeTask | contentFilter: searchInput" [canEdit]="true"  (dataChanged)="getTaskList()" (editClicked)="onAddOrEditClicked($event)"></app-task-list>
-  </div>
-  <div>
-    <div class="mat-h1">Done</div>
-    <app-task-list [taskList]="tasks | completedTask | contentFilter: searchInput" (dataChanged)="getTaskList()"></app-task-list>
   </div>
 </div>
+
